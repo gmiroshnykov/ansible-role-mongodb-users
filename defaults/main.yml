@@ -1,0 +1,4 @@
+mongodb_users:
+  login_user: null
+  login_password: null
+  users: []

@@ -1,0 +1,10 @@
+- name: create MongoDB users
+  mongodb_user:
+    login_user={{ mongodb_users.login_username }}
+    login_password={{ mongodb_users.login_password }}
+    user={{ item.username }}
+    password={{ item.password }}
+    database={{ item.database }}
+    roles={{ item.roles | join(',') }}
+  changed_when: false
+  with_items: mongodb_users.users
